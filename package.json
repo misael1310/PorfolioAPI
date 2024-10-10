@@ -5,7 +5,8 @@
   "main": "server.js",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   },
   "lint-staged": {
@@ -19,7 +20,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint",
     "build": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,8 @@
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.12.0",
     "@types/node": "^22.7.5",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.10.0",
@@ -44,5 +48,10 @@
     "prettier": "^3.3.3",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.8.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
