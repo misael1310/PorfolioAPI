@@ -1,4 +1,4 @@
-import mysql from "mysql2/promise";
+import { Mysql } from "./Mysql";
 import { dbConfig } from "config/dbConfig";
 
-export const dbConnection = mysql.createPool(dbConfig);
+export const DbConnection = new Mysql(dbConfig);
