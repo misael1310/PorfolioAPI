@@ -1,13 +1,12 @@
-import dotenv from "dotenv";
 import { PoolOptions } from "mysql2";
+import { ENV } from "./env";
 
-dotenv.config();
-
+const { host, user, password, database } = ENV;
 export const dbConfig: PoolOptions = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  host,
+  user,
+  password,
+  database,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
