@@ -1,7 +1,8 @@
 import { Router } from "express";
-import { post_list } from "controllers/post-controller";
+import { getPosts, getPostById } from "controllers/post-controller";
 
 const postRoutes = Router();
-postRoutes.get("/posts", post_list);
+postRoutes.get("/posts", getPosts);
+postRoutes.get("/post/:postID", getPostById);
 
 export { postRoutes };
