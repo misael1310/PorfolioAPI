@@ -11,14 +11,14 @@ export class Mysql implements Database {
   }
 
   private ensureConnection() {
-    if (!this?.conn) this.conn = createPool(this.credentials);
+    if (!this.conn) this.conn = createPool(this.credentials);
   }
 
-  async queryRows<T>(query: string): Promise<T[]> {
+  async queryRows<T>(query: string, values?: string[]): Promise<T[]> {
     if (!query) throw new Error("Query is required");
 
     this.ensureConnection();
-    const [result] = await this.conn.query<RowDataPacket[]>(query);
+    const [result] = await this.conn.query<RowDataPacket[]>(query, values);
 
     return result as T[];
   }
