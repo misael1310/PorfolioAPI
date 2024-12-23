@@ -1,0 +1,19 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.App = void 0;
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const router_1 = require("./router");
+const corsOptions_1 = require("./corsOptions");
+const App = () => {
+    const app = (0, express_1.default)();
+    app.use((0, cors_1.default)(corsOptions_1.corsOptions));
+    app.use(express_1.default.json());
+    app.use(router_1.appRouter);
+    return app;
+};
+exports.App = App;
+//# sourceMappingURL=app.js.map
