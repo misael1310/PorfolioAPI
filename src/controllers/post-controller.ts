@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
-import { PostRepository } from "repositories/postRepository";
-import { DbConnection } from "database/dbConnection";
+import { PostRepository } from "../repositories/postRepository";
+import { DbConnection } from "../database/dbConnection";
 import { Request, Response } from "express";
 
 const post = new PostRepository(DbConnection);

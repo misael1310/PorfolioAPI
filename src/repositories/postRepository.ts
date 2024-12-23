@@ -1,8 +1,8 @@
-import { Database } from "models/dataBase";
-import { Repository } from "models/baseRepositoryModel";
-import { PostResponse } from "models/Post/PostResponse";
-import { PostDB } from "models/Post/PostDB";
-import { selectAllPosts, selectPostById } from "models/Post/postQueries";
+import { Database } from "../models/dataBase";
+import { Repository } from "../models/baseRepositoryModel";
+import { PostResponse } from "../models/Post/PostResponse";
+import { PostDB } from "../models/Post/PostDB";
+import { selectAllPosts, selectPostById } from "../models/Post/postQueries";
 
 export class PostRepository implements Repository<PostResponse> {
   constructor(private dbConnection: Database) {}
