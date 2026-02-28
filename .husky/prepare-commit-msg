@@ -1,2 +1,6 @@
 #!/bin/sh
-exec < /dev/tty && npx cz --hook || true
+
+if [ -t 1 ] && [ -e /dev/tty ]; then
+  exec < /dev/tty
+  npx cz --hook
+fi
