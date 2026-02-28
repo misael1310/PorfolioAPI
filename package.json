@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-    }
-  },
   "lint-staged": {
     "src/**/*.ts": [
       "prettier --write",
