@@ -3,17 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-    }
-  },
   "lint-staged": {
     "src/**/*.ts": [
-      "prettier --write .",
-      "prettier --check .",
-      "npm run lint --fix"
+      "prettier --write",
+      "npm run lint -- --fix"
     ]
   },
   "scripts": {
@@ -31,29 +24,32 @@
   },
   "author": "Misael Perez",
   "license": "ISC",
+  "engines": {
+    "node": ">=22.22.0 <23"
+  },
   "bugs": {
     "url": "https://github.com/misael1310/PorfolioAPI/issues"
   },
   "homepage": "https://github.com/misael1310/PorfolioAPI#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@eslint/js": "^9.12.0",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.7.5",
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@eslint/js": "^10.0.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.19.11",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.12.0",
-    "eslint-config-prettier": "^9.1.0",
-    "globals": "^15.11.0",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.0",
+    "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.8.1"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
   },
   "config": {
     "commitizen": {
@@ -61,10 +57,10 @@
     }
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
     "express-async-handler": "^1.2.0",
-    "mysql2": "^3.11.3"
+    "mysql2": "^3.18.2"
   }
 }
